@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { URL, POPULARITY_URL } from "../api/BaseApi";
+import { URL } from "../api/BaseApi";
 
 import {
   Chart as ChartJS,
@@ -31,7 +31,7 @@ const Chart = (props) => {
     try {
       // after this line, our function will wait for the `fetch()` call to be settled
       // the `fetch()` call will either return a Response or throw an error
-      const response = await fetch(`${POPULARITY_URL}`);
+      const response = await fetch(`${URL}`);
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
